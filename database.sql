@@ -27,7 +27,7 @@ CREATE TABLE `admin` (
   `telepon` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `username` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `password` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `admin`
@@ -46,7 +46,7 @@ CREATE TABLE `fakultas` (
   `id` int NOT NULL,
   `nama` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `fakultas`
@@ -68,7 +68,7 @@ CREATE TABLE `mahasiswa` (
   `prodi_id` int NOT NULL,
   `nama` varchar(255) NOT NULL,
   `alamat` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `mahasiswa`
@@ -92,7 +92,7 @@ CREATE TABLE `prodi` (
   `fakultas_id` int NOT NULL,
   `nama` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `prodi`
