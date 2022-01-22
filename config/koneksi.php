@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$dbhost = "127.0.0.1:3307";
-$dbuser = "root";
-$dbpass = "1008";
-$dbname = "mahasiswa";
+$dbhost = "localhost";
+$dbuser = "almardiy_j_handip";
+$dbpass = "almardiy_j_handip";
+$dbname = "almardiy_j_handip";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 

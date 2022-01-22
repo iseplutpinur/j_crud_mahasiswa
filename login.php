@@ -12,9 +12,9 @@ $errorUser = false;
 if (isset($_POST["login"])) {
   $username = $_POST["username"];
   $password = $_POST["password"];
-
   // query ke database dengan username dan pasword yang di inputkan pengguna
   $result = mysqli_query($conn, "SELECT * FROM admin WHERE username = '$username' and password = '$password'");
+
 
   // periksa apakah query mendapatkan hasil
   if (mysqli_num_rows($result) === 1) {

@@ -1,18 +1,19 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Jan 22, 2022 at 03:04 PM
--- Server version: 8.0.26
--- PHP Version: 7.4.21
+-- Host: localhost:3306
+-- Generation Time: Jan 22, 2022 at 10:13 PM
+-- Server version: 10.3.32-MariaDB-log-cll-lve
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Database: `mahasiswa`
+-- Database: `almardiy_j_handip`
 --
 
 -- --------------------------------------------------------
@@ -22,12 +23,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int NOT NULL,
-  `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `telepon` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `username` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `password` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
-) ENGINE=InnoDB;
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `telepon` varchar(15) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
@@ -43,10 +44,10 @@ INSERT INTO `admin` (`id`, `nama`, `telepon`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `fakultas` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `fakultas`
@@ -64,22 +65,21 @@ INSERT INTO `fakultas` (`id`, `nama`, `deskripsi`) VALUES
 --
 
 CREATE TABLE `mahasiswa` (
-  `npm` int NOT NULL,
-  `prodi_id` int NOT NULL,
+  `npm` varchar(255) NOT NULL,
+  `prodi_id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `alamat` text NOT NULL
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`npm`, `prodi_id`, `nama`, `alamat`) VALUES
-(222, 1, '123', 'alamat'),
-(1234, 1, 'TIF 2', ''),
-(11121, 4, 'Manajemen Mahasiswa 1', ''),
-(11231, 2, 'Keuangan', ''),
-(2113191079, 1, 'Isep Lutpi Nur', 'Cianjur');
+('11121', 4, 'koko', 'jln. kopo'),
+('1234', 1, 'TIF 2', ''),
+('2113191079', 1, 'Isep Lutpi Nur', 'Cianjur'),
+('222', 1, '123', 'alamat');
 
 -- --------------------------------------------------------
 
@@ -88,11 +88,11 @@ INSERT INTO `mahasiswa` (`npm`, `prodi_id`, `nama`, `alamat`) VALUES
 --
 
 CREATE TABLE `prodi` (
-  `id` int NOT NULL,
-  `fakultas_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `fakultas_id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `prodi`
@@ -140,23 +140,17 @@ ALTER TABLE `prodi`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fakultas`
 --
 ALTER TABLE `fakultas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `mahasiswa`
---
-ALTER TABLE `mahasiswa`
-  MODIFY `npm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2113191080;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
