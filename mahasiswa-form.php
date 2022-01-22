@@ -69,7 +69,7 @@ if (isset($_GET['edit'])) {
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">CRUD Data Mahasiswa</a>
+    <a class="navbar-brand" href="./index.php">CRUD Data Mahasiswa</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -87,6 +87,9 @@ if (isset($_GET['edit'])) {
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="./mahasiswa.php">Mahasiswa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./logout.php">Logout</a>
         </li>
       </ul>
     </div>
